@@ -1,28 +1,25 @@
-#include <stdio.h> // printf
+#include <stdio.h> // p
 
-#define MAXLINE 80
-#define COMMENT //
+#define I_AM_A_MACRO_FOR_010 010
+#define p printf // This is generally not recommended
 
 enum boolean { NO, YES };
 
 int main() {
-    printf("010 = %d\n", 010);
-    printf("0x10 = %d\n", 0x10);
+    p("010 = %d\n", 010);
+    p("010 = %d\n", I_AM_A_MACRO_FOR_010);
+    p("0x10 = %d\n", 0x10);
 
-    printf("\\x7 = %c\n", '\x7');
-    printf("\\007 = %c\n", '\007');
-    printf("\\007 = %c\n", '\007');
-    printf("Hello, \\0 world = %s\n", "Hello, \0 world");
+    p("\\x7 = %c\n", '\x7');
+    p("\\007 = %c\n", '\007');
+    p("\\007 = %c\n", '\007');
+    p("Hello, \\0 world = %s\n", "Hello, \0 world");
 
-    char blank[1] = "";
-    char string[14] = "I am a string";
-    char multiline[MAXLINE+1] = "I am a multiline "
-                                "string";
-    printf("blank = %s\n", blank);
-    printf("string = %s\n", string);
-    printf("multiline = %s\n", multiline);
-
-    printf("NO = %d\n", NO);
-    printf("YES = %d\n", YES);
+    p("blank = %s\n", "");
+    p("string = %s\n", "I am a string");
+    p("multiline = %s\n", "I am a multieline "
+                               "string");
+    p("NO = %d\n", NO);
+    p("YES = %d\n", YES);
     return 0;
 }
