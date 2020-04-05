@@ -1,0 +1,247 @@
+-------------------------------------------------------------------------------
+subtitles: auto
+-------------------------------------------------------------------------------
+```
+Variables, Types,
+Operators, Expressions
+```
+
+This video discusses variables, types, operators, and expressions.  These
+concepts are fundamental to most programming languages.
+
+-------------------------------------------------------------------------------
+```
+Variables
+```
+
+Variables are a fundamental unit of computing.  They are similar, though not
+exactly the same as variables from mathematics.  In mathematics, a variable
+might be used to represent some unknown.  For example, given an equation, solve
+for the variable x.
+
+In computing, on the other hand, the value of a variable
+must always be known.  It is only a way of attaching a name to data.
+
+-------------------------------------------------------------------------------
+In C, all variables must be declared before being used.  This is an example of
+several valid declarations in C.
+
+```c
+int no_value;
+int variable = 0;
+int _variable = 1;
+int my_variable_2 = 2;
+int myVariable3 = 3;
+float pi = 3.14;
+```
+
+-------------------------------------------------------------------------------
+Here are some examples of declarations that are NOT valid.  Any program
+including any of these would fail to compile.
+
+```c
+// None of these delcarations are valid
+int 1variable;
+int var!able;
+int my variable;
+int if;
+int void;
+int default;
+```
+
+-------------------------------------------------------------------------------
+Basically, your variable can be any permutation of letters, digits, and
+underscores, so long as it does not start with a digit, and it is not a
+reserved word.  The reserved words of C are shown here.  They all have
+special functions which we will learn about later.
+
+```md
+break else long switch case enum register typedef
+char extern return union const float short unsigned
+continue for signed void default goto sizeof volatile 
+do if static while
+```
+
+-------------------------------------------------------------------------------
+While this gives us a lot of possibilities, you should always ask whether you
+should before you ask whether you can.  What follows is a quote from "The C
+Programming Language" by Brian Kerninghan and Dennis Ritchie.
+
+(voice: William)
+
+"It’s wise to choose variable names that are related to the purpose of the
+variable, and that are unlikely to get mixed up typographically. We tend to use
+short names for local variables, especially loop indices, and longer names for
+external variables"
+
+```md
+"It’s wise to choose variable names that are related to the purpose of the
+variable, and that are unlikely to get mixed up typographically. We tend to use
+short names for local variables, especially loop indices, and longer names for
+external variables"
+```
+
+(voice: Charles)
+
+Naming is mundane, but extremely important in all of programming.  You should
+err on the side of caution toward longer more descriptive variable names.
+
+-------------------------------------------------------------------------------
+```
+Types
+```
+
+Types are almost as prevalent as variables in programming.  In C, every
+variable has a type.  It is there for your own safety, to ensure that you only
+do things that you are allowed to do with the data stored in a variable.
+
+Please note that many types do not have standard definition in terms of the
+amount of storage provided for them.  In the following descriptions, I will do
+my best to tell you the most restrictve scenario, which is typically what you
+should design for if you want your program to work across multiple systems.
+
+-------------------------------------------------------------------------------
+There are quite few types in C, making it easy to learn all of them.  The
+fundamental types are: char, int, float, and double.
+
+```md
+* char
+* int
+* float
+* double
+```
+
+-------------------------------------------------------------------------------
+A char represents a character, like 'A', '0' or hyphen for example.  Note that
+if they are declared with a value, that value must be surrounded with single
+quotes, not double quotes.
+
+```c
+char a = 'A';
+char b = '0';
+char c  = '-';
+```
+
+-------------------------------------------------------------------------------
+An int is used to represent an integer like -30, 12 or 1e5.
+
+```c
+int a = -30;
+int b = 12;
+int c = 1e5;
+```
+
+-------------------------------------------------------------------------------
+A float is used to represent non integer numbers like -2.7, 5.3, or 2e-6
+
+```c
+float a = -2.7;
+float b = 5.3;
+float c = 2e-6;
+```
+
+-------------------------------------------------------------------------------
+Finally, a double is like a float but it is more precise and takes up more
+space.  We will look at the difference in more depth shortly.
+
+```c
+double a = -2.7;
+double b = 5.3;
+double c = 2e-6;
+```
+
+-------------------------------------------------------------------------------
+```
+Type Modifiers
+```
+
+Type modifiers allow us to give more detail as to how we want our variable
+to be treated and how much space we get for it.  The type modifiers in C
+are short, long, signed, and unsigned.  
+
+```md
+* short
+* long
+* signed
+* unsigned
+```
+
+-------------------------------------------------------------------------------
+Some examples of valid usage are given here.  They can be used by placing them
+before the type, and other modifiers, but not every modifier is applicable to
+every type.
+
+```c
+signed char = 'a';
+short int a = 32767;
+long int b = 2147483647;
+signed int c = -1;
+usigned int d = 1;
+long double = 12345.67890
+```
+-------------------------------------------------------------------------------
+```
+Signed and Unsigned
+```
+The signed and unsigned modifiers can be applied only to chars and integers.
+Signed means that the value can be negative, and unsigned means it can only be
+positive.  By default chars can be either signed or unsigned depending on the
+machine.  However, integers are always signed by default.
+
+A char is always one byte, or 8 bits.  Therefore, Unsigned chars can hold
+values in the range of 0 to 255, while signed chars can hold values on the
+range of -127 to 127.
+
+Signed integers have at least 2 bytes or 16 bits.  Therefore, they can hold
+values at least in the range of -32,767 to 32,767.  Unsigned integers have the
+same nubmer of bits and therefore can store any value in the range of 0 to
+65,635.
+
+(font-size: 100)
+
+```md
+|      | bits | signed          | unsigned  |
+|------|------|-----------------|-----------|
+| char | 8    | [-128, 127]     | [0, 255]  |
+| int  | 16   | [-32768, 32767] | [0, 65635 |
+```
+-------------------------------------------------------------------------------
+```
+Short and Long
+```
+The short and long modifiers can be applied only to integers and doubles,
+though a long double is relatively rare.  Note that in the case of integers,
+one may apply the long modifier up to two times, and combine it with the signed
+or unsigned modifiers.
+
+Short integers have at least 2 bytes and are guaranteed to have equal or fewer
+bytes than an int.  This means that short integers can hold values at least in
+the range -32,767 to 32,767.  Long integers have at least 4 bytes, and long
+long integers have at least 8 bytes.  The resulting maximum values are shown
+in the table.
+
+Finally, a long double typically has more precision than a double, but the
+exact size is not specified in the C standard.  This means it is implementation
+dependent but typically ranges from 10 to 16 bytes.  The math for determining
+its range is harder than the math for integers, and we won't go through it
+here.
+
+(font-size: 60)
+
+```md
+|               | bits | min value            | max value           | smallest difference |
+|---------------|------|----------------------|---------------------|---------------------|
+| short int     | 16   | -32768               | 32767               | 1                   |
+| long int      | 32   | -2147483647          | 2147483647          | 1                   |
+| long long int | 64   | -9223372036854775807 | 9223372036854775807 | 1                   |
+| long double   | 128  | -1.18973e+4932       | 1.18973e+4932       | 1.0842e-19          |
+```
+-------------------------------------------------------------------------------
+```
+Conclusion
+```
+This is a lot to information to absorb.  Lucky for you, all of this information
+is built into the C language itself.  If you pound include limits.h and
+float.h, you can access the limits we discussed here as "macros" such as
+SHORT_MAX, INT_MAX, LONG_MAX, FLT_MAX and more.  See example 0.c for a more
+complete demonstration.
