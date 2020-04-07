@@ -1,25 +1,43 @@
-#include <stdio.h> // p
+/*
+Exercise 2-1, based off of tutorialspoint.com:
+https://www.tutorialspoint.com/c_standard_library/limits_h.htm
+*/
 
-#define I_AM_A_MACRO_FOR_010 010
-#define p printf // This is generally not recommended
-
-enum boolean { NO, YES };
+#include <stdio.h> // printf
+#include <limits.h> /* CHAR_BIT, SCHAR_MIN, SCHAR_MAX, CHAR_MIN, CHAR_MAX
+                       SHRT_MIN, SHRT_MAX, INT_MIN, INT_MAX, LONG_MIN,
+                       LONG_MAX LLONG_MIN, LLONG_MAX */
+#include <float.h> /* FLT_MAX, FLT_EPSILON, DBL_MAX, DBL_EPSILON, LDBL_MAX
+                      LDBL_EPSILON */
 
 int main() {
-    p("010 = %d\n", 010);
-    p("010 = %d\n", I_AM_A_MACRO_FOR_010);
-    p("0x10 = %d\n", 0x10);
 
-    p("\\x7 = %c\n", '\x7');
-    p("\\007 = %c\n", '\007');
-    p("\\007 = %c\n", '\007');
-    p("Hello, \\0 world = %s\n", "Hello, \0 world");
+   printf("The number of bits in a char %d\n", CHAR_BIT);
 
-    p("blank = %s\n", "");
-    p("string = %s\n", "I am a string");
-    p("multiline = %s\n", "I am a multieline "
-                               "string");
-    p("NO = %d\n", NO);
-    p("YES = %d\n", YES);
-    return 0;
+   printf("signed char [min] = %d\n", SCHAR_MIN);
+   printf("signed char [max] = %d\n", SCHAR_MAX);
+   printf("unisgned char [max] = %d\n", UCHAR_MAX);
+   printf("char [min] = %d\n", CHAR_MIN);
+   printf("char [max] = %d\n", CHAR_MAX);
+
+   printf("short int [min] = %d\n", SHRT_MIN);
+   printf("short int [max] = %d\n", SHRT_MAX); 
+
+   printf("int [min] = %d\n", INT_MIN);
+   printf("int [max] = %d\n", INT_MAX);
+
+   printf("long [min] = %ld\n", LONG_MIN);
+   printf("long [max] = %ld\n", LONG_MAX);
+
+   printf("long long [min] = %lld\n", LLONG_MIN);
+   printf("long long [max] = %lld\n", LLONG_MAX);
+
+   printf("float [max] = %g\n", FLT_MAX);
+   printf("float [smallest] = %g\n", FLT_EPSILON);
+   printf("double [max] = %g\n", DBL_MAX);
+   printf("double [smallest] = %g\n", DBL_EPSILON);
+   printf("long double [max] = %Lg\n", LDBL_MAX);
+   printf("long double [smallest] = %Lg\n", LDBL_EPSILON);
+
+   return(0);
 }
