@@ -3,12 +3,12 @@ Exercise 2-1, based off of tutorialspoint.com:
 https://www.tutorialspoint.com/c_standard_library/limits_h.htm
 */
 
-#include <stdio.h> // printf
+#include <float.h> /* FLT_MAX, FLT_EPSILON, DBL_MAX, DBL_EPSILON, LDBL_MAX
+                      LDBL_EPSILON */
 #include <limits.h> /* CHAR_BIT, SCHAR_MIN, SCHAR_MAX, CHAR_MIN, CHAR_MAX
                        SHRT_MIN, SHRT_MAX, INT_MIN, INT_MAX, LONG_MIN,
                        LONG_MAX LLONG_MIN, LLONG_MAX */
-#include <float.h> /* FLT_MAX, FLT_EPSILON, DBL_MAX, DBL_EPSILON, LDBL_MAX
-                      LDBL_EPSILON */
+#include <stdio.h> /* printf */
 
 int main() {
 
