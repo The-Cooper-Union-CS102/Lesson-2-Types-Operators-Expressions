@@ -1,10 +1,18 @@
-# Variables, Types, Operators, Expressions
+-------------------------------------------------------------------------------
+subtitles: auto
+-------------------------------------------------------------------------------
+```
+Variables, Types,
+Operators, Expressions
+```
 
-This section discusses variables, types, operators, and expressions.  These
+This video discusses variables, types, operators, and expressions.  These
 concepts are fundamental to most programming languages.
 
 -------------------------------------------------------------------------------
-## Variables
+```
+Variables
+```
 
 Variables are a fundamental unit of computing.  They are similar, though not
 exactly the same as variables from mathematics.  In mathematics, a variable
