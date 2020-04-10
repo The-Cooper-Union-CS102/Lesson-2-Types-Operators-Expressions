@@ -1,5 +1,5 @@
 // Operators
-#include <stdio.h> // printf
+#include <stdio.h> /* printf */
 
 int main() {
     int a = 3;
