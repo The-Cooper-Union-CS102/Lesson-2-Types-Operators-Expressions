@@ -1,10 +1,10 @@
 #include <stdio.h> /* printf */
 
 int main() {
-    float dividend = 51.7;
-    float divisor = 5.3;
-    float quotient = dividend / divisor;
-    float product = quotient * divisor;
-    printf("%.6f / %.6f = %.6f\n", dividend, divisor, quotient);
-    printf("%.6f = %.6f * %.6f\n", product, quotient, divisor);
+    float dividend = 77777.0;
+    float divisor = 7.0;
+    float quotient_a = dividend / divisor;
+    float inverse = 1.0 / divisor;
+    float quotient_b = dividend * inverse;
+    printf("%.10f vs. \n%.10f\n", quotient_a, quotient_b);
 }
