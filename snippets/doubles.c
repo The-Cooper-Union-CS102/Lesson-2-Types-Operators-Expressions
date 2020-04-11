@@ -7,5 +7,6 @@ int main() {
     double b = 5.3;
     double c = 2e-6;
     printf("double [max] = %g\n", DBL_MAX);
+    printf("double [min] = %g\n", DBL_MIN);
     printf("double [smallest] = %g\n", DBL_EPSILON);
 }

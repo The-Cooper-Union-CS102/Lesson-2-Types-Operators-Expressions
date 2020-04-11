@@ -13,6 +13,7 @@ int main() {
     printf("long long int [max] = %lld\n", LLONG_MAX);
 
     printf("long double [max] = %Lg\n", LDBL_MAX);
+    printf("long double [min] = %Lg\n", LDBL_MIN);
     printf("long double [smallest] = %Lg\n", LDBL_EPSILON);
 }
 

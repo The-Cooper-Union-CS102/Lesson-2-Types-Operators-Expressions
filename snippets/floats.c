@@ -7,5 +7,6 @@ int main() {
     float b = 5.3;
     float c = 2e-6;
     printf("float [max] = %g\n", FLT_MAX);
-    printf("float [smallest] = %g\n", FLT_EPSILON);
+    printf("float [min] = %g\n", FLT_MIN);
+    printf("float [epsilon] = %g\n", FLT_EPSILON);
 }
