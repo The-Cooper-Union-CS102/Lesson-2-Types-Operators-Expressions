@@ -75,7 +75,7 @@ as ones in the binary number.  The following is a table showing this process.
 |---------------------|----:|---:|---:|----:|---:|---:|---:|----:|---|
 | `2^n`               | 128 | 64 | 32 |  16 |  8 |  4 |  2 |   1 | - |
 | fits into remaning? | yes | no | no | yes | yes | no | no | yes | - |
-| `bit`               |   1 |  0 |  0 |   1 |  0 |  0 |  0 |   1 | - |
+| `bit`               |   1 |  0 |  0 |   1 |  1 |  0 |  0 |   1 | - |
 | subtract            | 128 |  0 |  0 |  16 |  8 |  0 |  0 |   1 | - |
 | remaining           | 153 | 25 | 25 |  25 |  9 |  1 |  1 |   1 | 0 |
 
