@@ -233,11 +233,11 @@ leading `0`:
 #include <stdio.h> /* printf */
 
 int main() {
-    printf("010 = %d\n", 06723);
+    printf("06723 = %d\n", 06723);
 }
 ```
 ```
-010 = 3539
+06723 = 3539
 ```
 
 Hexadecimal is even more compact, and you can convert 4 binary digits to one
